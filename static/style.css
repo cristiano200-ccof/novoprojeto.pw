@@ -178,3 +178,214 @@ h1 {
     color: #888;
     font-style: normal;
 }
+
+/* ==========================================================================
+   Estilos da Página de Blog / Mural (blog.ejs)
+   ========================================================================== */
+
+.blog-main {
+    background-color: #fcfbf9; /* Um tom levemente off-white para cansar menos a vista */
+    padding: 50px 0;
+    width: 100%;
+}
+
+.blog-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.blog-page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-page-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.3rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.blog-page-subtitle {
+    font-family: sans-serif;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Caixa de Envio de Poemas */
+.blog-submission-box {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.blog-section-title {
+    font-family: 'Georgia', serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.blog-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-form label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.blog-form input, .blog-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+}
+
+.blog-btn-submit {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.blog-btn-submit:hover {
+    background: #333;
+}
+
+/* Feed de Poemas */
+.blog-feed-title {
+    font-family: 'Georgia', serif;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.poem-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.poem-card-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.poem-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.poem-author {
+    font-size: 0.85rem;
+    color: #666;
+    font-family: sans-serif;
+}
+
+.poem-body {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid #ddd;
+}
+
+/* Rodapé dos Cards e Notas */
+.poem-card-footer {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.poem-grade-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+    width: fit-content;
+}
+
+.status-graded {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.status-pending {
+    background-color: #fef7e0;
+    color: #b06000;
+}
+
+.teacher-feedback {
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Área de Ação do Professor */
+.teacher-action-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+}
+
+.teacher-grade-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.teacher-grade-form input[type="number"] {
+    width: 70px;
+    padding: 6px;
+}
+
+.teacher-grade-form input[type="text"] {
+    flex: 1;
+    min-width: 180px;
+    padding: 6px;
+}
+
+.blog-btn-grade {
+    background: #2b52a2;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
