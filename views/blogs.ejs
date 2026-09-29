@@ -1,0 +1,86 @@
+<%- include('partials/header') %>
+
+<div style="display: flex; flex-direction: column; min-height: 100vh;">
+
+  <main class="blog-main" style="flex: 1;">
+    <div class="ui container blog-container">
+      
+      <!-- Cabeçalho da Página -->
+      <header class="blog-page-header">
+        <h1 class="blog-page-title">Mural dos Poemas</h1>
+        <p class="blog-page-subtitle">Compartilhe suas criações e receba o feedback de nossos professores.</p>
+      </header>
+
+      <!-- SEÇÃO: ENVIAR POEMA (Visível para Alunos Logados) -->
+      <section class="blog-submission-box">
+        <h3 class="blog-section-title">Submeter Nova Poesia</h3>
+        <form action="/blog/enviar" method="POST" class="blog-form">
+          <div class="form-group">
+            <label for="titulo">Título do Poema</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Dê um título à sua obra..." required>
+          </div>
+          <div class="form-group">
+            <label for="conteúdo">Seu Poema</label>
+            <textarea id="conteudo" name="conteudo" rows="8" placeholder="Digite seus versos aqui..." required></textarea>
+          </div>
+          <button type="submit" class="blog-btn-submit">Enviar para Avaliação</button>
+        </form>
+      </section>
+
+      <!-- SEÇÃO: LISTA DE POEMAS ENVIADOS -->
+      <section class="blog-feed">
+        <h2 class="blog-feed-title">Poemas Recentes</h2>
+
+        <!-- CARD DE POEMA EXEMPLO 1 (Já avaliado) -->
+        <article class="poem-card">
+          <div class="poem-card-header">
+            <h3 class="poem-title">O Despertar das Palavras</h3>
+            <span class="poem-author">Por: Mariana Silva (Aluna)</span>
+          </div>
+          <div class="poem-body">
+            <p>No silêncio da noite escura,<br>
+               A caneta dança sem pressa.<br>
+               A mente cria sua própria cura,<br>
+               E a alma em versos se expressa.</p>
+          </div>
+          <div class="poem-card-footer">
+            <!-- Nota visível para todos -->
+            <div class="poem-grade-badge status-graded">
+              Nota: <strong>9.5 / 10</strong>
+            </div>
+            <span class="teacher-feedback">"Excelente ritmo e escolha de rimas!" — Prof. Carlos</span>
+          </div>
+        </article>
+
+        <!-- CARD DE POEMA EXEMPLO 2 (Aguardando Nota) -->
+        <article class="poem-card">
+          <div class="poem-card-header">
+            <h3 class="poem-title">Metáfora do Vento</h3>
+            <span class="poem-author">Por: Lucas Souza (Aluno)</span>
+          </div>
+          <div class="poem-body">
+            <p>O vento sopra segredos que ninguém quer ouvir,<br>
+               Leva as folhas secas e o medo de cair.</p>
+          </div>
+          <div class="poem-card-footer">
+            <!-- Área do Professor: Só aparece para quem for professor avaliar -->
+            <div class="teacher-action-zone">
+              <span class="poem-grade-badge status-pending">Aguardando Avaliação</span>
+              
+              <!-- Formulário rápido para o professor dar a nota -->
+              <form action="/blog/avaliar/ID_DO_POEMA" method="POST" class="teacher-grade-form">
+                <input type="number" name="nota" min="0" max="10" step="0.1" placeholder="Nota" required>
+                <input type="text" name="feedback" placeholder="Deixe um comentário rápido..." required>
+                <button type="submit" class="blog-btn-grade">Avaliar</button>
+              </form>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+</div>
