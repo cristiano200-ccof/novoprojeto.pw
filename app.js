@@ -5,13 +5,9 @@ const path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
-var usersRouter = require('./routes/users');
 var blogRouter = require('./routes/blog');
 var tutorialRouter = require('./routes/tutorial');
-var indexRouter = require('./routes/index');
-var alunoRouter = require('./routes/aluno');
-var professorRouter = require('./routes/professor');
+//var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var app = express();
 
@@ -35,12 +31,10 @@ app.use(session({
   saveUninitialized: true
 }));
 
-//app.use('/', indexRouter);
-app.use('/', tutorialRouter);
-app.use('/users', usersRouter);
+app.use('/', loginRouter);       
+app.use('/tutorial', tutorialRouter); 
 app.use('/blog', blogRouter);
-app.use('/aluno', alunoRouter);
-app.use('/login',loginRouter);
+    
 
 
 // catch 404 and forward to error handler
