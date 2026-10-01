@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
+const session = require('express-session');
+const path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -11,6 +12,7 @@ var tutorialRouter = require('./routes/tutorial');
 var indexRouter = require('./routes/index');
 var alunoRouter = require('./routes/aluno');
 var professorRouter = require('./routes/professor');
+var loginRouter = require('./routes/login');
 var app = express();
 
 // view engine setup
@@ -23,12 +25,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Permite que o Express entenda os dados enviados pelos formulários (POST)
+app.use(express.urlencoded({ extended: true }));
+
+// Configuração da Sessão (obrigatório para o login funcionar)
+app.use(session({
+  secret: 'sua-chave-secreta',
+  resave: false,
+  saveUninitialized: true
+}));
+
 //app.use('/', indexRouter);
 app.use('/', tutorialRouter);
 app.use('/users', usersRouter);
 app.use('/blog', blogRouter);
-app.use('/aluno', alunoRoute);
-app.use('/professor', professorRouter);
+app.use('/aluno', alunoRouter);
+app.use('/login',loginRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
