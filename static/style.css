@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+
+/* ==========================================================================
+   Estilos da Página de Tutorial (tutorial.ejs)
+   ========================================================================== */
+
+/* Container Principal */
+.tutorial-main {
+    background-color: #ffffff;
+    min-height: 80vh;
+    padding: 40px 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Caixa de Conteúdo Centralizada */
+.tutorial-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #222222;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+/* Títulos Principais e Secundários */
+.tutorial-title {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Encolhe no celular para não vazar */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.tutorial-subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 10px;
+}
+
+.tutorial-section-title {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.tutorial-text-muted {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+/* Blocos de Exemplos (Poemas) */
+.tutorial-example-box {
+    margin: 30px auto;
+    padding-left: 25px;
+    border-left: 3px solid #1a1a1a;
+    font-style: italic;
+    max-width: 450px;
+}
+
+.tutorial-example-tag {
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #777;
+    display: block;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.tutorial-poem-line {
+    margin: 0 0 5px 0;
+}
+
+.tutorial-poem-break {
+    margin: 0 0 15px 0;
+}
+
+/* Seção de Exercícios */
+.tutorial-exercise-card {
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.tutorial-exercise-title {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.tutorial-badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.tutorial-badge {
+    background: #1a1a1a;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Bloco do Soneto */
+.tutorial-sonnet-box {
+    background-color: #fcfbf9;
+    border: 1px dashed #ccc;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 550px;
+    border-radius: 4px;
+}
+
+.tutorial-sonnet-title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: 'Georgia', serif;
+}
+
+.tutorial-sonnet-author {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.tutorial-sonnet-content {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.tutorial-sonnet-row {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tutorial-annotation {
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   Estilos da Página de Blog / Mural (blog.ejs)
+   ========================================================================== */
+
+.blog-main {
+    background-color: #fcfbf9; /* Um tom levemente off-white para cansar menos a vista */
+    padding: 50px 0;
+    width: 100%;
+}
+
+.blog-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.blog-page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-page-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.3rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.blog-page-subtitle {
+    font-family: sans-serif;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Caixa de Envio de Poemas */
+.blog-submission-box {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.blog-section-title {
+    font-family: 'Georgia', serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.blog-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-form label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.blog-form input, .blog-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+}
+
+.blog-btn-submit {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.blog-btn-submit:hover {
+    background: #333;
+}
+
+/* Feed de Poemas */
+.blog-feed-title {
+    font-family: 'Georgia', serif;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.poem-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.poem-card-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.poem-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.poem-author {
+    font-size: 0.85rem;
+    color: #666;
+    font-family: sans-serif;
+}
+
+.poem-body {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid #ddd;
+}
+
+/* Rodapé dos Cards e Notas */
+.poem-card-footer {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.poem-grade-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+    width: fit-content;
+}
+
+.status-graded {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.status-pending {
+    background-color: #fef7e0;
+    color: #b06000;
+}
+
+.teacher-feedback {
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Área de Ação do Professor */
+.teacher-action-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+}
+
+.teacher-grade-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.teacher-grade-form input[type="number"] {
+    width: 70px;
+    padding: 6px;
+}
+
+.teacher-grade-form input[type="text"] {
+    flex: 1;
+    min-width: 180px;
+    padding: 6px;
+}
+
+.blog-btn-grade {
+    background: #2b52a2;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
