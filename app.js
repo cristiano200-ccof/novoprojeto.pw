@@ -31,10 +31,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use('/', loginRouter);       
-app.use('/tutorial', tutorialRouter); 
-app.use('/blog', blogRouter);
-    
+app.use('/', tutorialRouter);       
+app.use('/login', loginRouter); 
+app.get('/', (req, res) => res.redirect('/blog'));
 
 
 // catch 404 and forward to error handler
