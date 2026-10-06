@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 // Rota da página de login
-router.get('/login', (req, res) => {
-    res.render('login');
+router.get('/', (req, res) => {
+    res.render('index');
 });
 
 // Rota que processa o formulário de login
-router.post('/login', (req, res) => {
+router.post('/index', (req, res) => {
     const { email, senha } = req.body;
 
     let usuario = null;

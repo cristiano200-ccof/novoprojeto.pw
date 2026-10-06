@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Rota para mostrar a página de login
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.render('login', { usuario: null }); 
 });
 
