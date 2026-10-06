@@ -1,14 +1,13 @@
 var createError = require('http-errors');
 var express = require('express');
-const session = require('express-session');
 const path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session'); 
 
 var blogRouter = require('./routes/blog');
 var tutorialRouter = require('./routes/tutorial');
-//var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/login');
+var indexRouter = require('./routes/index');
 var app = express();
 
 // view engine setup
@@ -31,10 +30,10 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use('/', tutorialRouter);       
-app.use('/login', loginRouter); 
-app.get('/', (req, res) => res.redirect('/blog'));
-
+app.use('/', indexRouter);       
+app.use('/tutorial', tutorialRouter); 
+app.use('/blog', blogRouter);
+    
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
