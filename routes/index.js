@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
         req.session.usuario = usuario;
         
         // Redireciona para a página do blog
-        res.redirect('/blog'); 
+        res.redirect('/tutorial'); 
     } else {
         res.send('Usuário ou senha incorretos.');
     }
