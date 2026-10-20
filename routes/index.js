@@ -18,8 +18,8 @@ router.post('/index', (req, res) => {
     }
 
     if (usuario) {
-        garantirAutenticacao = usuario;
-        res.redirect('/blog'); 
+        req.session.usuario = usuario;
+        res.redirect('/tutorial'); 
     } else {
         res.send('Usuário ou senha incorretos.');
     }
