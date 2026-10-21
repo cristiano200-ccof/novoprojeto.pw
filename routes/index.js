@@ -23,9 +23,9 @@ router.post('/', (req, res) => {
         req.session.usuario = usuario;
         
         // Redireciona para a página do blog
-        res.redirect('/tutorial'); 
+         return res.redirect('/tutorial'); 
     } else {
-        res.send( 'index'{error:Usuário ou senha incorretos.'});
+        return res.send( 'index'{error:Usuário ou senha incorretos.'});
     }
 });
 
