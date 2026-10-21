@@ -1,16 +1,19 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-function garantirAutenticacao(req, res, next) {
+// Middleware de proteção
+function verificarAutenticacao(req, res, next) {
     if (req.session && req.session.usuario) {
-        return next(); 
+        return next();
     }
-    
-    res.redirect('/'); 
+    res.redirect('/');
 }
 
-router.get('/', function(req, res, next) {
-        res.render('blog'); 
+// Rota principal do blog (Acessada via /blog)
+router.get('/', verificarAutenticacao, (req, res) => {
+    // Passamos os dados do usuário para a página do blog também
+    res.render('blog', { usuario: req.session.usuario });
 });
 
 module.exports = router;
+
