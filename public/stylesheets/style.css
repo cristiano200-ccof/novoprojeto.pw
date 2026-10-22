@@ -133,3 +133,16 @@ h1 {
    border-top: 4px solid #41d472;
    border-radius: 8px;
 }
+
+
+.poemastyle{
+  margin: 0;
+   display: flex; 
+   justify-content: space-between;
+}
+
+.subpoemastyle{
+  margin: 0 0 15px 0; 
+  display: flex; 
+  justify-content: space-between;
+}
