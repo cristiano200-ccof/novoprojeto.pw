@@ -19,9 +19,9 @@ router.post('/index', (req, res) => {
 
     if (usuario) {
         req.session.usuario = usuario;
-        res.redirect('/tutorial'); 
+      return  res.redirect('/tutorial'); 
     } else {
-        res.send('Usuário ou senha incorretos.');
+       return res.send('index', { error:'Usuário ou senha incorretos.'});
     }
 });
 
