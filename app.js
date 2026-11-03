@@ -4,6 +4,14 @@ const path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session'); 
+// Conexão com o MongoDB Atlas
+const mongoose = require('mongoose');
+const mongoURI = 'mongodb+srv://Cristiano:1977senha@cluster0.zpojfeq.mongodb.net/';
+
+mongoose.connect(mongoURI)
+  .then(() => console.log('✅ Conectado com sucesso ao MongoDB Atlas!'))
+  .catch(err => console.error('❌ Erro ao conectar ao MongoDB:', err));
+
 
 var blogRouter = require('./routes/blog');
 var tutorialRouter = require('./routes/tutorial');
@@ -27,7 +35,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'sua-chave-secreta',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie:{
+    secure: false,
+    samesite: 'lax'
+  }
 }));
 
 app.use('/', indexRouter);       
