@@ -56,26 +56,37 @@ router.post('/index', async (req, res) => {
         const usuarioEncontrado = await Usuario.findOne({ email: email });
 
         // Verifica se o usuário existe e se a senha bate
+      // Verifica se o usuário existe e se a senha bate
         if (usuarioEncontrado && usuarioEncontrado.senha === senha) {
             
-            // Salva os dados dele na sessão do Express (o que o seu blog.ejs já usa!)
+            // Salva os dados dele na sessão do Express
             req.session.usuario = {
                 nome: usuarioEncontrado.nome,
                 tipo: usuarioEncontrado.tipo,
                 email: usuarioEncontrado.email
             };
 
-            // Se logou com sucesso, manda para a página de tutorial ou blog
-            return res.redirect('/tutorial');
+            // Salva a sessão com segurança e redireciona apenas uma vez
+            req.session.save((err) => {
+                if (err) {
+                    console.error("Erro ao salvar a sessão:", err);
+                }
+                return res.redirect('/tutorial');
+            });
+
         } else {
             // Se os dados estiverem errados, recarrega a página com erro
-            return res.render('index', { erro: 'E-mail ou senha incorretos!' });
+            return res.render('index', { error: 'E-mail ou senha incorretos!' });
         }
-
     } catch (err) {
         console.error("Erro no login:", err);
         res.status(500).send("Erro interno no servidor.");
     }
+});
+
+// ROTA PARA ABRIR A TELA DE CADASTRO
+router.get('/cadastro', (req, res) => {
+    res.render('cadastro');
 });
 
 // 3. ROTA DE CADASTRO (Para criar novos Alunos/Professores no banco)
